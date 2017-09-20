@@ -45,4 +45,11 @@ setTimeout(() => {
 
 // console.log(process.argv[3]);
 
+const http = require('http');
 
+const server = http.createServer((req, res) => {
+  res.write('hellO World');
+  res.end();
+});
+
+server.listen(8000, () => console.log("I'm listening on Port 8000! ^__^"));

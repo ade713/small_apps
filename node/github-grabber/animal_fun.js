@@ -13,19 +13,19 @@ fs.readFile('./animals.txt', 'utf-8', (err,data) => {
 
   animals = data.split("\n");
   filtered = animals.filter(animal => animal[0].toLowerCase() === firstLetter);
-  // console.log(filtered);
   letterAnimals = filtered.join("\n");
-  console.log('HELLO', letterAnimals);
 });
 
-fs.writeFile(`./${firstLetter}_animals.txt`, `${letterAnimals}`, err => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(letterAnimals);
-    console.log(`${firstLetter}_animals created!`);
-  }
-});
+setTimeout(() => {
+  fs.writeFile(`./${firstLetter}_animals.txt`, `${letterAnimals}`, err => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(letterAnimals);
+      console.log(`${firstLetter}_animals created!`);
+    }
+  });
+}, 100);
 
 // fs.readFile('./animals.txt', 'utf-8', (err,data) => {
 //   if (err) {

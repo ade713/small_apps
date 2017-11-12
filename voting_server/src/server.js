@@ -6,4 +6,9 @@ export function startServer(store) {
   store.subscribe(
     () => io.emit('state', store.getState().toJS())
   );
+
+  io.on('connection', (socket) => {
+    socket.emit('state', store.getState().toJS());
+  });
+
 }

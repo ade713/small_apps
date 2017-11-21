@@ -10,7 +10,8 @@ module.exports = {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: 'react-hot!babel'
+      // loader: 'react-hot!babel'
+      loader: require.resolve('babel-loader')
     }]
   },
   resolve: {
@@ -27,5 +28,11 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
-  ]
+  ],
+  watchOptions: { // for babel-loader
+    cacheDirectory: true,
+    plugins: [
+      'reader-hot-loader/babel'
+    ]
+  }
 };

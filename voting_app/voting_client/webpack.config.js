@@ -29,7 +29,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
-  watchOptions: { // for babel-loader
+  watchOptions: { // for babel-loader and react-hot-loader
     cacheDirectory: true,
     plugins: [
       'reader-hot-loader/babel'

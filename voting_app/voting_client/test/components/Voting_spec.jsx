@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { renderIntoDocument,
-         scryRenderedDOMComponentsWithTag } from 'react-addons-test-utils';
+         scryRenderedDOMComponentsWithTag } from 'react-dom/test-utils';
+// alternative: import ReactTestUtils from 'react-dom/test-utils';
 import { expect } from 'chai';
 
 import Voting from '../../src/components/Voting';

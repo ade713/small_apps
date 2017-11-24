@@ -1,7 +1,6 @@
 import React from 'react';
 
-
-export default class Voting extends React.Component {
+export default class Vote extends React.Component {
   constructor(props){
     super(props);
   }
@@ -18,16 +17,16 @@ export default class Voting extends React.Component {
     return this.props.hasVoted === entry;
   }
 
-  render() {
+  render(){
     return(
       <div className="voting">
-        {  this.getPair().map(entry => 
+        { this.getPair().map(entry =>
             <button key={ entry }
                     disabled={ this.isDisabled() }
                     onClick={ () => this.props.vote(entry) }>
               <h1>{ entry }</h1>
-              { this.hasVotedFor(entry) ? 
-                  <div className="label">Voted</div> : null }
+              { this.hasVotedFor(entry) ?
+                <div className="label">Voted</div> : null }
             </button>
         )}
       </div>

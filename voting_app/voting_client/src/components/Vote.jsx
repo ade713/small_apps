@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default class Vote extends React.Component {
+export default class Vote extends React.PureComponent {
 
   getPair() {
-    return this.props.pair || [];
+    return this.props.pair;
   }
 
   isDisabled() {

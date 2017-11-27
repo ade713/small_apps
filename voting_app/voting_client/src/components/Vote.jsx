@@ -1,6 +1,9 @@
 import React from 'react';
 
 export default class Vote extends React.PureComponent {
+  constructor(props){
+    super(props);
+  }
 
   getPair() {
     return this.props.pair;

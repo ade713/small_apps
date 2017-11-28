@@ -11,18 +11,18 @@ import Results from './components/Results';
 
 const pair = ['Trainspotting', '28 Days Later'];
 
-const routes = (
-  <div>
-    <Route component={ App }>
-      <Route path="/results" component={ Results } />
-      <Route exact path="/" component={ Voting } />
-    </Route>
-  </div>
-);
+// const routes = (
+//   <div>
+//     <Route component={ App }> */}
+//       <Route path="/results" component={ Results } />
+//       <Route exact path="/" component={ Voting } />
+//     </Route>
+//   </div>
+// );
 
 ReactDOM.render(
   <HashRouter>
-    { routes }
+    <App />
   </HashRouter>,
   document.getElementById('app')
 );

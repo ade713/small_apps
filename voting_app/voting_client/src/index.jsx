@@ -4,6 +4,7 @@ import { Route } from 'react-router';
 import { HashRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import io from 'socket.io-client';
 
 import App from './components/App';
 import reducer from './reducer';
@@ -19,6 +20,8 @@ store.dispatch({
     }
   }
 });
+
+const socket = io(`${ location.protocol }//${ location.hostname }:8090`);
 
 ReactDOM.render(
   <Provider store={ store }>

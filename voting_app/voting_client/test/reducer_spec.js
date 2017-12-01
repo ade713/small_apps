@@ -3,7 +3,7 @@ import { List,
          fromJS } from 'immutable';
 import { expect } from 'chai';
 
-import reducer from '../src/render';
+import reducer from '../src/reducer';
 
 
 describe('reducer', () => {

@@ -4,7 +4,7 @@ import { List,
 import { Route } from 'react-router';
 
 import Results from './Results';
-import Voting from './Voting';
+import { VotingContainer, Voting } from './Voting';
 
 const pair = List.of('Trainspotting', '28 Days Later');
 const tally = Map({
@@ -39,7 +39,7 @@ export default class App extends React.Component {
     return (
       <div>
         <Route exact path="/results" component={ ResultsComponent } />
-        <Route path="/" component={ VotingComponent } />
+        <Route path="/" component={ VotingContainer } />
       </div>
     );
   }

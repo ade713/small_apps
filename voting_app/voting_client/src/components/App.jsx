@@ -3,7 +3,7 @@ import { List,
          Map } from 'immutable';
 import { Route } from 'react-router';
 
-import Results from './Results';
+import { ResultsContainer, Results } from './Results';
 import { VotingContainer, Voting } from './Voting';
 
 const pair = List.of('Trainspotting', '28 Days Later');
@@ -30,15 +30,9 @@ export default class App extends React.Component {
   }
 
   render() {
-    // return (
-    //   React.cloneElement(
-    //     this.props.children, 
-    //     { pair: pair }
-    //   )
-    // );
     return (
       <div>
-        <Route exact path="/results" component={ ResultsComponent } />
+        <Route exact path="/results" component={ ResultsContainer } />
         <Route path="/" component={ VotingContainer } />
       </div>
     );

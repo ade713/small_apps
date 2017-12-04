@@ -11,15 +11,20 @@ import reducer from './reducer';
 
 
 const store = createStore(reducer);
-store.dispatch({
-  type: 'SET_STATE',
-  state: {
-    vote: {
-      pair: ['Sunshine', '28 Days Later'],
-      tally: { Sunshine: 2 }
-    }
-  }
-});
+socket.on('state', state => 
+  store.dispatch({
+    type: 'SET_STATE', state
+  })
+);
+// store.dispatch({
+//   type: 'SET_STATE',
+//   state: {
+//     vote: {
+//       pair: ['Sunshine', '28 Days Later'],
+//       tally: { Sunshine: 2 }
+//     }
+//   }
+// });
 
 const socket = io(`${ location.protocol }//${ location.hostname }:8090`);
 

@@ -27,13 +27,16 @@ const VotingComponent = (props) => {
 export default class App extends React.Component {
   constructor(props){
     super(props);
+    console.log('APP', this.props);
   }
 
   render() {
     return (
       <div>
         <Route exact path="/results" component={ ResultsContainer } />
+        {/* <Route exact path="/results" component={ ResultsComponent } /> */}
         <Route path="/" component={ VotingContainer } />
+        {/* <Route path="/" component={ VotingComponent } /> */}
       </div>
     );
   }

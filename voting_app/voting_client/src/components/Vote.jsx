@@ -3,6 +3,7 @@ import React from 'react';
 export default class Vote extends React.PureComponent {
   constructor(props){
     super(props);
+    console.log('vote', this.props);
   }
 
   getPair() {
@@ -19,6 +20,7 @@ export default class Vote extends React.PureComponent {
 
   render(){
     return(
+      console.log('here', this.props.pair),
       <div className="voting">
         { this.getPair().map(entry =>
             <button key={ entry }

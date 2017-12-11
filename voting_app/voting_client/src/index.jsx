@@ -13,7 +13,7 @@ import { setState } from './action_creators';
 import remoteActionMiddleware from './remote_action_middleware';
 
 const createStoreWithMiddleware = applyMiddleware(
-  remoteActionMiddleware
+  remoteActionMiddleware(socket)
 )(createStore);
 const store = createStore(reducer);
 

@@ -9,6 +9,8 @@ import * as actionCreators from '../action_creators';
 export class Voting extends React.PureComponent {
   constructor(props){
     super(props);
+    console.log('VOTING', this.props);
+    
   }
   
   render() {

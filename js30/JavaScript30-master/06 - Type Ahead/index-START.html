@@ -32,7 +32,7 @@ function findMatches(wordToMatch, cities) {
 }
 
 function numberWithCommas(x) {
-  return x.to_string().replace(/\B(?=(\d{3}`)+(?!\d))/g, ',');
+  return x.toString().replace(/\B(?=(\d{3}`)+(?!\d))/g, ',');
 }
 
 function displayMatches() {
@@ -52,8 +52,12 @@ function displayMatches() {
     
     return `
       <li>
-        <span class="name">${cityName}, ${stateName}</spam>
-        <span class="population"> ${place.population}</spam>
+        <span class="name">
+          ${cityName}, ${stateName}
+        </spam>
+        <span class="population"> 
+          ${numberWithCommas(place.population)}
+        </span>
       </li>
     `
   }).join('');

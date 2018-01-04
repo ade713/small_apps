@@ -18,24 +18,48 @@
     }
 
     // Regular
+    console.log('hello');
 
     // Interpolated
+    console.log('Hello I am a %s string', 'UGLY!!!');
 
     // Styled
+    // console.log('%c I am here to show ', 'font-size: 20px; background: green; color: yellow; text-shadow: 10px 10px 0 grey');
+    console.log('%c I am here to show ', 'font-size: 20px; background: green; color: yellow; text-shadow: 5px 5px 0 grey');
 
     // warning!
+    console.warn('Woopies!!!');
 
     // Error :|
+    console.error('That\'s not right!');
 
     // Info
+    console.info('This is a JS30 lesson');
 
     // Testing
+    console.assert(5 < 3, 'this is incorrect...'); // only fires if something is wrong
+
+    const pEl = document.querySelector('p');
+
+    console.assert(pEl.textContent.includes('B'));
+    console.log(pEl.textContent);
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    console.log(pEl); // shows actuatial element
+    console.dir(pEl); //shows the different property and methods of an element
+    console.clear();
 
     // Grouping together
+      dogs.forEach(dog => {
+        console.group(`${ dog.name }`);
+        console.log(`This is ${ dog.name }`);
+        console.log(`${ dog.name } is ${ dog.age } years old`);
+        console.log(`${ dog.name } is ${ dog.age * 7 } dog years old`);
+        console.groupEnd(`${ dog.name }`);
+      });
 
     // counting
 

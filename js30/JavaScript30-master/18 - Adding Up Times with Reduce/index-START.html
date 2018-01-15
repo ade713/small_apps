@@ -194,8 +194,16 @@
     })
     .reduce((total, vidSeconds) => total + vidSeconds);
 
+  let secondsLeft = seconds;
+  const hours = parseInt(secondsLeft / 3600);
+  secondsLeft %= 3600;
+
+  const mins = parseInt(secondsLeft / 60);
+  secondsLeft %= 60;
+
+  // console.log(secondsLeft);
     
-  // console.log(seconds);
+  console.log(hours, mins, secondsLeft);
 </script>
 </body>
 </html>

@@ -45,7 +45,18 @@
       .join('');
   }
 
+  function setVoice() {
+    console.log(this.value);
+    msg.voice = voices.find(voice => voice.name === this.value);
+  }
+
+  function toggle(startOver = true) {
+    speechSynthesis.cancel();
+    if (startOver) speechSynthesis.speak(msg);
+  }
+
   speechSynthesis.addEventListener('voiceschanged', populateVoices);
+  voicesDropdown.addEventListener('change', setVoice);
   
 </script>
 

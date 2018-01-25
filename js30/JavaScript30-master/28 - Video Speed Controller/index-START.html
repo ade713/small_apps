@@ -17,7 +17,7 @@
 <script>
   const speed = document.querySelector('.speed');
   const bar = document.querySelector('.speed-bar');
-  const video = document.querySelector('.video');
+  const video = document.querySelector('.flex');
 
   speed.addEventListener('mousemove', function(e) {
     const y = e.pageY - this.offsetTop;
@@ -29,6 +29,7 @@
 
     bar.style.height = height;
     bar.textContent = playbackRate.toFixed(1) + 'x';
+    video.playbackRate = playbackRate;
 
     console.log(percent);
   });

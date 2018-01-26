@@ -6,6 +6,8 @@ function timer(seconds) {
   const now = Date.now();
   const then = now + seconds * 1000;
   displayTimeLeft(seconds);
+  // displayTimeLeft(then);
+  displayEndTime(then);
   
   countdown = setInterval(() => {
     const secondsLeft = Math.round((then - Date.now()) / 1000);
@@ -36,5 +38,5 @@ function displayEndTime(timestamp) {
   const hour = end.getHours();
   const minutes = end.getMinutes();
 
-  endTime.textContent = ``;
+  endTime.textContent = `Be Back At ${ hour > 12 ? hour - 12 : hour }:${ minutes < 10 ? '0' : '' }${ minutes }`;
 }

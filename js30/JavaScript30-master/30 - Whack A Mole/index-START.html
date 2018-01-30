@@ -38,21 +38,31 @@
   const moles = document.querySelectorAll('.mole');
   let lastHole;
 
-  function randTime(min, max) {
-      return Math.round(Math.rnadom() * (max - min) + min);
+  function randomTime(min, max) {
+      return Math.round(Math.random() * (max - min) + min);
   }
 
   function randomHole(holes) {
     const idx = Math.floor(Math.random() * holes.length);
     const hole = holes[idx];
     if(hole === lastHole) {
-      console.log('not twice in a row man');
       return randomHole(holes);
     }
 
     lastHole = hole;
     return hole;
   }
+
+  function peep() {
+    const time = randomTime(200, 1000);
+    const hole = randomHole(holes);
+    hole.classList.add('up');
+    setTimeout(() => {
+      hole.classList.remove('up');
+      peep();
+    }, time);
+  }
+  
 </script>
 </body>
 </html>

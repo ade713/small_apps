@@ -36,7 +36,23 @@
   const holes = document.querySelectorAll('.hole');
   const scoreBoard = document.querySelector('.score');
   const moles = document.querySelectorAll('.mole');
+  let lastHole;
 
+  function randTime(min, max) {
+      return Math.round(Math.rnadom() * (max - min) + min);
+  }
+
+  function randomHole(holes) {
+    const idx = Math.floor(Math.random() * holes.length);
+    const hole = holes[idx];
+    if(hole === lastHole) {
+      console.log('not twice in a row man');
+      return randomHoles(holes);
+    }
+
+    lastHole = hole;
+    return hole;
+  }
 </script>
 </body>
 </html>

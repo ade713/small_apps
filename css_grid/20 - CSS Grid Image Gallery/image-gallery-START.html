@@ -85,12 +85,12 @@
       transition: 0.2s;
     }
 
-    .item_overlaay button {
+    .item__overlay button {
       background: none;
       border: 2px solid white;
       color: white;
       text-transform: uppercase;
-      background-color: (169, 169, 169, 0.7);
+      background-color: (0, 0, 0, 0.7);
       padding: 5px;
     }
 
@@ -169,6 +169,16 @@
       return Math.floor(Math.random() * limit) + 1;
     }
 
+    function handleClick(e) {
+      const src = e.curretTarget.querySelector('img').src;
+      overlayImage.src = src;
+      overlay.classList.add('open');
+    }
+
+    function close() {
+      overlay.classList.remove('close');
+    }
+
     function generateSingleBlocks(numBlocks) {
       const singles = new Array(numBlocks);
       singles.fill([[1, 1]]);
@@ -180,6 +190,9 @@
     const html = digits.map(generateHTML).join('');
     gallery.innerHTML = html;
 
+    const items = document.querySelectorAll('item');
+
+    items.forEach(item => item.addEventListener('click', handleClick));
 
   </script>
 </body>

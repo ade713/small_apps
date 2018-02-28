@@ -12,6 +12,11 @@ img {
   max-width: 100%;
 }
 
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+}
+
 .top {
   display: grid;
   grid-gap: 20px;
@@ -107,4 +112,14 @@ img {
 
 .feature .icon {
   font-size: 55px;
+}
+
+/* About Section */
+
+.about {
+  background: rgba(150, 175, 200, 0.5);
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  align-items: center;
 }

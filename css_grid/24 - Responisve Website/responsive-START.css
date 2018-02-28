@@ -82,9 +82,29 @@ img {
   color: var(--black);
   text-transform: uppercase;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 [aria-controls="menu-list"] {
   display: none;
+}
+
+/* Features */
+
+.features {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.feature {
+  background: var(--yellow);
+  text-align: center;
+  border: 1px solid var(--black);
+  padding: 10px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature .icon {
+  font-size: 55px;
 }

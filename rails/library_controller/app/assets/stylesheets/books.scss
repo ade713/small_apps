@@ -1,0 +1,23 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.books {
+  display: grid;
+  width: 30em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid blue;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: darkblue;
+  border-bottom: 1px solid darkblue;
+}
+
+li {
+  min-height: 30px;
+}

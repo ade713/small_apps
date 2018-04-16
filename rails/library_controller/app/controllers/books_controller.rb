@@ -15,7 +15,8 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to books_url
     else
-      render Bool.errors.full_messages, status: 422
+      render @book.errors.full_messages, status: 422
+      render :index
     end
   end
 
